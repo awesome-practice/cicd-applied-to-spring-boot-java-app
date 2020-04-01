@@ -49,7 +49,6 @@
     </dependencies>
 
     <build>
-        <!--        <finalName>cicd-applied-to-spring-boot-java-app.jar</finalName>-->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -73,8 +72,6 @@
                 </executions>
                 <configuration>
                     <repository>${docker.image.prefix}/${project.artifactId}</repository>
-                    <!--                    <serverId>index.docker.io</serverId>-->
-                    <!--                    <registryUrl>https://index.docker.io:443/v1/</registryUrl>-->
                 </configuration>
             </plugin>
             <!-- maven-dependency-plugin useful for creating docker image -->
