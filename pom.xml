@@ -46,7 +46,7 @@
     </dependencies>
 
     <build>
-        <finalName>cicd-applied-to-spring-boot-java-app</finalName>
+<!--        <finalName>cicd-applied-to-spring-boot-java-app.jar</finalName>-->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -54,7 +54,7 @@
             </plugin>
 
             <!-- deploy to docker -->
-            <plugin>
+            <plugin>  <!--  https://github.com/spotify/dockerfile-maven  -->
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
                 <version>1.4.9</version>
@@ -70,10 +70,6 @@
                 </executions>
                 <configuration>
                     <repository>${docker.image.prefix}/${project.artifactId}</repository>
-                    <buildArgs>
-                        <JAR_FILE>${project.build.finalName}</JAR_FILE>
-                    </buildArgs>
-
                     <!--                    <serverId>index.docker.io</serverId>-->
                     <!--                    <registryUrl>https://index.docker.io:443/v1/</registryUrl>-->
                 </configuration>
